@@ -18,4 +18,4 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    print("База данных cars и таблица 'cars' успешно созданы.")
+    print("База данных 'cars' успешно создана.")

@@ -26,7 +26,7 @@ def scrape_with_selenium(url):
         driver.get(url)
         time.sleep(5)
 
-        # Закрываем всплывающие окна
+        # Закрываю всплывающее окно
         try:
             WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable(
@@ -35,7 +35,7 @@ def scrape_with_selenium(url):
         except:
             pass
 
-        # Ожидаем загрузки карточек
+        # Ожидание загрузки
         WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'iva-item-root')]"))
         )
@@ -49,13 +49,13 @@ def scrape_with_selenium(url):
 
         for car in cars:
             try:
-                title = car.find_element(By.XPATH, ".//div[contains(@class, 'iva-item-title-CdRX')]").text
-                price = car.find_element(By.XPATH, ".//span[contains(@class, 'price-root-IfnJI')]").text
+                title = car.find_element(By.CLASS_NAME, "iva-item-title-KE8A9").text
+                price = car.find_element(By.CLASS_NAME, "price-root-tm5ut").text
 
                 new_car = Car(
                     title=title,
                     price=price,
-                    datetime=datetime.datetime.now()  # Исправлено: передаем datetime объект
+                    datetime=datetime.datetime.now()
                 )
                 session.add(new_car)
 
