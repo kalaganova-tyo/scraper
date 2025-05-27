@@ -1,7 +1,7 @@
 import sqlite3
 
 
-conn = sqlite3.connect('cars.db')
+conn = sqlite3.connect('../Web_api_4_project/cars.db')
 cursor = conn.cursor()
 
 cursor.execute("""

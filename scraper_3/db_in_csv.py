@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('cars.db')
+conn = sqlite3.connect('../Web_api_4_project/cars.db')
 
 df = pd.read_sql_query("SELECT * FROM cars", conn)
 

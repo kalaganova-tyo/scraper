@@ -3,7 +3,7 @@ from typing import Dict, List
 import logging
 import random
 import time
-from scraper import scrape_with_selenium
+from scraper_3.scraper import scrape_with_selenium
 
 
 logging.basicConfig(level=logging.INFO)

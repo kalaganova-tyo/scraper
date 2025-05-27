@@ -5,9 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 import datetime
-from model import Car
+from scraper_3.model import Car
 
 
 def scrape_with_selenium(url):
@@ -75,7 +74,7 @@ def scrape_with_selenium(url):
 if __name__ == '__main__':
     # Создаем структуру БД
     from sqlalchemy import create_engine
-    from model import Base
+    from scraper_3.model import Base
 
     engine = create_engine('sqlite:///cars.db')
     Base.metadata.create_all(engine)
